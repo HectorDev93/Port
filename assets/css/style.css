@@ -4,11 +4,18 @@
     --font1: 'Alegreya', serif;
     --transparent_white: rgba(255, 255, 255, 0.8);
     --almost_transparent_white: rgba(255, 255, 255, 0.2);
+    --service_item: rgba(255, 255, 255, 0.2);
     --white: rgb(255, 255, 255);
     --mostaza: rgb(201, 152, 6);
+    --border_color:rgba(129, 129, 129, 0.719);
     --degra1: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
     --degra2: linear-gradient(to top, #cfd9df00 0%, #e2ebf000 100%);
+    --soft-black:rgba(0,0,0,0.1);
 
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html {
@@ -17,16 +24,16 @@ html {
 
 body {
     font-family: var(--font1);
-    box-sizing: border-box;
 }
 
 .main__container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, max-content);
+    grid-template-rows: repeat(3, max-content);
     grid-template-areas:
         "head"
-        "acer";
+        "acer"
+        "serv";
 }
 
 .container {
@@ -200,18 +207,32 @@ body {
 
 .main {
     /* background-image: var(--degra1); */
-    background-color: rgba(31, 85, 202, 0.61);
+    background-image: var(--degra1)
 }
 
 .title {
     text-align: center;
     font-size: 2.4rem;
     /* color: var(--transparent_white); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
 }
-
+.title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 50%;
+    height: 5%;
+    border-radius: 2em;
+    background-color: var(--soft-black);
+    transform: scaleX(1.08);
+    opacity: 0.75;
+}
 .acerca {
     grid-area: acer;
-    height: auto;
+    /* height: 500px; */
     perspective: 800px;
 }
 
@@ -223,7 +244,9 @@ body {
 .acerca__body {
     text-align: center;
 }
-
+.acerca__paragraph{
+    line-height: 1.8;
+}
 .tecnologies__body {
     width: 100%;
     max-width: 350px;
@@ -239,7 +262,6 @@ body {
     text-align: center;
 }
 
-/*bloque de prueba*/
 #cubo {
     transform-style: preserve-3d;
     width: 300px;
@@ -248,9 +270,11 @@ body {
     transform: rotateY(0deg);
     animation: rotateCube 12s linear infinite;
 }
-#cubo:hover{
+
+#cubo:hover {
     animation-play-state: paused;
 }
+
 @keyframes rotateCube {
 
     0% {
@@ -324,16 +348,19 @@ body {
     top: 25px;
     right: 100px;
 }
-.cara__icon--axios{
+
+.cara__icon--axios {
     /* right: -1px;
     width: 300px;
     height: 250px; */
     top: 100px;
 }
-.cara__icon--git{
+
+.cara__icon--git {
     top: 100px;
-    right:25px
+    right: 25px
 }
+
 .frente {
     /* background-color: rgba(95, 27, 188, 0.5); */
     transform: translateZ(150px);
@@ -372,8 +399,79 @@ body {
 
 
 
-/*fin bloque de prueba*/
+.servicio {
+    grid-area: serv;
+    /* background-color: rgba(234,232,200,0.5); */
+}
 
+.servicio__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+    gap: 20px;
+}
+
+.servicio__item {
+    /* width: 200px; */
+    background-color: var(--almost_transparent_white);
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    /* transition: color .5s linear */
+    /*prueba*/
+    
+  box-shadow: inset 0 0 0 2px transparent;
+  position: relative;
+}
+
+.servicio__img {
+    margin-top: 20px;
+    width: 100px;
+}
+
+.servicio__item::before, .servicio__item::after {
+    box-sizing: inherit;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  
+  
+.center {
+    transition: color 0.25s;
+  }
+  
+.center:hover {
+    color: var(--border_color);
+  }
+  .center::before, .center::after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+    border-radius: 15px;
+  }
+  .center::before {
+    border-top: 2px solid var(--border_color);
+    border-bottom: 2px solid var(--border_color);
+    transform: scale3d(0, 1, 1);
+  }
+  .center::after {
+    border-left: 2px solid var(--border_color);
+    border-right: 2px solid var(--border_color);
+    transform: scale3d(1, 0, 1);
+  }
+  .center:hover::before, .center:hover::after {
+    transform: scale3d(1, 1, 1);
+    transition: transform 0.5s;
+  }
+
+
+/*bloque de prueba*/
+
+/*fin bloque de prueba*/
 
 
 
@@ -417,4 +515,9 @@ body {
         text-align: start;
     }
 
+
+    .servicio__gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, max-content);
+    }
 }
