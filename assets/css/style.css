@@ -407,6 +407,12 @@ body {
 
 .servicio {
     grid-area: serv;
+    /* width: 100%;
+    background-image: url('../img/fondo.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; */
     /* background-color: rgba(234,232,200,0.5); */
 }
 
@@ -593,7 +599,7 @@ img {
 .portafolio__button span {
     margin-right: 10px;
 }
-
+/* 
 @media (hover: none) {
     .portafolio__title {
         opacity: 1;
@@ -602,7 +608,7 @@ img {
     .portafolio__picture img {
         filter: blur(2px);
     }
-}
+} */
 /*bloque de prueba*/
 /*fin bloque de prueba*/
 
