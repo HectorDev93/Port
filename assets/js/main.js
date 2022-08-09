@@ -14,6 +14,34 @@ const typed = new Typed('.typed',{
     cursorChar: '|',
     contentType: 'html'
 });
+
+const toggleElement = document.getElementById('toggle-menu');
+const menuElement = document.getElementById('menu');
+
+menuElement.addEventListener('click', () =>{
+  menuElement.classList.toggle('header__nav__menu--show');
+});
+
+toggleElement.addEventListener('click', () =>{
+  menuElement.classList.toggle('header__nav__menu--show');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
 let constrain = 10;
 let mouseOverContainer = document.getElementById("cubo");

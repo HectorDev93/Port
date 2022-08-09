@@ -8,22 +8,23 @@
     <title>HectorDev</title>
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="main__container">
+
         <header class="header">
+
             <nav class="header__nav container">
                 <img src="./assets/img/logo2.png" alt="" class="header__logo">
-                <div class="header__nav__menu">
-                    <a href="#acer" class="header__nav__item">Acerca de</a>
-
-                    <a href="#serv" class="header__nav__item">Servicios</a>
-
-                    <a href="#port" class="header__nav__item">Portafolio</a>
-                    <!--  <a href="#" class="header__nav__item">Contacto</a> -->
+                <img id="toggle-menu" src="./assets/img/icon-hamburger.svg" alt="" class="header__nav__icon">
+                <div id="menu" class="header__nav__menu">
+                    <a id="link" href="#acer" class="header__nav__item">Acerca de</a>
+                    <a id="link" href="#serv" class="header__nav__item">Servicios</a>
+                    <a id="link" href="#port" class="header__nav__item">Portafolio</a>
+                    <a id="link" href="#cont" class="header__nav__item">Contacto</a>
                 </div>
-                <img src="./assets/img/icon-hamburger.svg" alt="" class="header__nav__icon">
             </nav>
 
             <section class="header__content container">
@@ -31,9 +32,12 @@
                 <h1 class="header__content__title">Soy Héctor Boadas<br>
                     <span class="typed header__content__subtitle"></span></h1>
             </section>
+
         </header>
+
         <main class="main">
-            <section id="acer" class="acerca container">
+
+            <section id="acer" class="acerca container"  data-aos="fade-up" data-aos-duration="2000">
                 <h1 class="title">Acerca de:</h1>
                 <div class="acerca__content container">
                     <div class="acerca__body">
@@ -76,7 +80,7 @@
 
             <section id="serv" class="servicio container">
 
-                <h1 class="title">Servicios</h1>
+                <h1 class="title title--white">Servicios</h1>
                 <div class="servicio__gallery">
                     <div class="servicio__item center">
                         <img src="assets/img/mobile-app.png" alt="" class="servicio__img">
@@ -123,7 +127,8 @@
                     </div>
                 </div>
             </section>
-            <section id="port" class="portafolio container">
+
+            <section id="port" class="portafolio container" data-aos="fade-up" data-aos-duration="2000">
 
                 <h1 class="title">Portafolio</h1>
                 <div class="portafolio__gallery">
@@ -224,9 +229,33 @@
                 </div>
             </section>
         </main>
+        <footer id="cont" class="footer">
+            <div class="footer__container container">
+                <div class="footer__container container">
+                    <!-- <img src="assets/img/logo2.png" alt="" class="footer__logo"> -->
+                    <nav class="footer__nav">
+                        <a href="#acer" class="footer__link">Acerca de </a>
+                        <a href="#serv" class="footer__link">Servicios</a>
+                        <a href="#port" class="footer__link">Portafolio</a>
+                    </nav>
+
+                    <nav class="footer__social">
+                        <a href="#" class="footer__media"><img src="assets/img/github (1).png" alt=""
+                                class="footer__icon"></a>
+                        <a href="#" class="footer__media"><img src="assets/img/linkedin-icon.svg" alt=""
+                                class="footer__icon"></a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
