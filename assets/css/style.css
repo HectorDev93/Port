@@ -502,12 +502,12 @@ color: var(--color4);
 }
 .servicio__paragraph{
     font-family: var(--font2);
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
 }
 .servicio__img {
-    margin-top: 20px;
-    width: 100px;
+    width: 80px;
+    margin-top: 5px;
 }
 
 .servicio__item::before,
@@ -797,6 +797,10 @@ color: var(--color1);
         grid-template-columns: repeat(3, 1fr);
     }
     
+.servicio__img {
+    width: 100px;
+    margin-top: 20px;
+}
 .portafolio__button img {
     filter: grayscale(1);
 }
