@@ -8,13 +8,15 @@
     --color2: rgba(255, 255, 255, 0.2);
     --color3: rgba(255, 255, 255, 0.1);
     --color4: rgba(255, 255, 255, 0.65);
+    --color5: rgb(19, 50, 83);
     --service_item: rgba(255, 255, 255, 0.2);
     --white: rgb(255, 255, 255);
     --mostaza: rgb(201, 152, 6);
-    --soft-black: rgba(0, 0, 0, 0.1);
-    --border_color: rgba(245, 42, 42, 0.842);
+    --title_line: rgba(0, 0, 0, 0.2);
+    --border_color: #52B0B3;
     --cover_color: rgba(129, 129, 129, 0.719);
-    --degra1: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    --color_fondo: rgb(13 41 76);
+    --degra1: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
     --degra2: linear-gradient(to top, #cfd9df00 0%, #e2ebf000 100%);
 
 }
@@ -31,6 +33,7 @@ html {
 
 body {
     font-family: var(--font1);
+    color: var(--color1);
 }
 
 .main__container {
@@ -52,7 +55,7 @@ body {
 
 .header {
     grid-area: head;
-    background-image: url('../img/fondo3.jpg');
+    background-image: url('../img/fondo5.jpg');
     background-size: cover;
     background-position: center;
     background-color: transparent;
@@ -60,10 +63,21 @@ body {
     height: 100vh;
     background-attachment: fixed;
     object-fit: cover;
+    position: relative;
+}
+.header::before{
+ position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
 }
 
-
 .header__nav {
+    /* font-family: var(--font2); */
     padding: 30px 0;
     display: grid;
     align-items: center;
@@ -73,6 +87,7 @@ body {
 
 .header__logo {
     width: 90px;
+    z-index: 1;
 }
 
 .header__nav__menu {
@@ -232,7 +247,7 @@ body {
 
 .main {
     /* background-image: var(--degra1); */
-    background-image: var(--degra1)
+    /* background-color: var(--color_fondo) */
 }
 
 .title {
@@ -256,15 +271,17 @@ body {
     width: 50%;
     height: 5%;
     border-radius: 2em;
-    background-color: var(--soft-black);
+    background-color: var(--title_line);
     transform: scaleX(1.08);
-    opacity: 0.75;
 }
 
 .acerca {
     grid-area: acer;
     /* height: 500px; */
     perspective: 800px;
+    width: 100%;
+    background-color: var(--color_fondo);
+    
 }
 
 .acerca__content {
@@ -277,6 +294,9 @@ body {
 }
 
 .acerca__paragraph {
+    font-family: var(--font2);
+    font-size: 1.2em;
+    font-weight: 600;
     line-height: 1.8;
 }
 
@@ -436,13 +456,13 @@ body {
     grid-area: serv;
     position: relative;
     width: 100%;
-    background-image: url('../img/fondo4.jpg');
+    /* background-image: url('../img/fondo4.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed;  */
      background-color: rgba(234,232,200,0.5);
 }
-.servicio::after {
+.servicio::before {
     position: absolute;
     content: "";
     top: 0;
@@ -450,18 +470,23 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: 0.5;
+    background-image: url('../img/fondo4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: hue-rotate(195deg);
 }
 .servicio__gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 300px;
+    grid-auto-rows: 320px;
     gap: 20px;
+    margin: 0 25px;
 }
 
 .servicio__item {
     /* width: 200px; */
-    background-color: var(--color2);
+    background-color: var(--color3);
     justify-content: center;
     text-align: center;
     border-radius: 15px;
@@ -532,7 +557,10 @@ color: var(--color4);
     transition: transform 0.5s;
 }
 
-.portafolio {}
+.portafolio {
+    background-color: var(--color_fondo);
+    width: 100%;
+}
 
 
 
@@ -554,6 +582,7 @@ img {
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 250px;
     grid-gap: 1em;
+    margin: 0 20px;
 }
 
 .portafolio__item {
@@ -656,7 +685,7 @@ img {
 } */
 
 .footer {
-    background-image: var(--degra1);
+    background-color: var(--color_fondo);
     text-align: center;
 }
 
@@ -680,6 +709,7 @@ img {
     text-decoration: none;
     padding: 1.5rem 0 3rem;
     transition: color .3s linear;
+    color: var(--color1);
 }
 .footer__link:hover{
 color: var(--color1);
